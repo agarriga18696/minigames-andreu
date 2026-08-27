@@ -1,0 +1,34 @@
+{
+  "inici": {
+    "titol": "Tria un joc"
+  },
+
+  "menu": {
+    "joc": "Joc",
+    "jocMnemonic": "J",
+    "inici": "Inici",
+    "sortir": "Sortir",
+
+    "idioma": "Idioma",
+    "idiomaMnemonic": "I",
+
+    "temes": "Temes",
+    "temesMnemonic": "T",
+
+    "ajuda": "Ajuda",
+    "ajudaMnemonic": "A",
+
+    "sobre": "Quant a..."
+  },
+
+  "sobre": {
+    "titol": "Quant a Minijocs Andreu",
+    "missatge": "Minijocs Andreu\nAplicació de minijocs desenvolupada amb Java Swing."
+  },
+
+  "joc": {
+    "colorar": {
+      "nom": "Colorar"
+    }
+  }
+}
