@@ -19,7 +19,7 @@
         <dependency>
             <groupId>io.github.agarriga18696</groupId>
             <artifactId>andreu-utils</artifactId>
-            <version>6.0.0</version>
+            <version>6.0.2</version>
         </dependency>
 
         <dependency>
