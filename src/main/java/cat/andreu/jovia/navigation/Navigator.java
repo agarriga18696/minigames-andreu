@@ -8,7 +8,7 @@ import java.awt.CardLayout;
  * Manages navigation between application screens using a {@link CardLayout}.
  *
  * @author Andreu
- * @version 2.0
+ * @version 2.1
  */
 public final class Navigator {
 
@@ -45,34 +45,34 @@ public final class Navigator {
     }
 
     /**
-     * Registers a screen with the specified identifier.
+     * Registers a screen.
      *
-     * @param name  Screen identifier.
-     * @param panel Screen panel.
+     * @param screen Screen identifier.
+     * @param panel  Screen panel.
      */
     public void addScreen(
-            String name,
+            Screen screen,
             JPanel panel
     ) {
 
         containerPanel.add(
                 panel,
-                name
+                screen.name()
         );
     }
 
     /**
-     * Displays the screen associated with the specified identifier.
+     * Displays the specified screen.
      *
-     * @param name Screen identifier.
+     * @param screen Screen to display.
      */
     public void show(
-            String name
+            Screen screen
     ) {
 
         cardLayout.show(
                 containerPanel,
-                name
+                screen.name()
         );
     }
 }
