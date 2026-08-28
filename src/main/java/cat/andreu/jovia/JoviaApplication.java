@@ -2,6 +2,7 @@ package cat.andreu.jovia;
 
 import cat.andreu.jovia.i18n.Messages;
 import cat.andreu.jovia.navigation.Navigator;
+import cat.andreu.jovia.navigation.Screen;
 import cat.andreu.jovia.view.HomePanel;
 import cat.andreu.jovia.view.LanguageSelectionPanel;
 
@@ -13,19 +14,12 @@ import io.github.agarriga18696.andreuutils.swing.GuiApplicationBase;
 import javax.swing.JFrame;
 
 /**
- * Main application for Jovia.
+ * Main Jovia application.
  *
  * @author Andreu
- * @version 2.1
+ * @version 2.0
  */
 public final class JoviaApplication extends GuiApplicationBase {
-
-    // ----------------------------------------
-    // CONSTANTS
-    // ----------------------------------------
-
-    private static final String SCREEN_LANGUAGE = "LANGUAGE";
-    private static final String SCREEN_HOME = "HOME";
 
     // ----------------------------------------
     // ATTRIBUTES
@@ -38,9 +32,6 @@ public final class JoviaApplication extends GuiApplicationBase {
     // INITIALIZATION
     // ----------------------------------------
 
-    /**
-     * Initializes the main application window and its screens.
-     */
     @Override
     protected void initialize() {
         mainFrame =
@@ -50,7 +41,8 @@ public final class JoviaApplication extends GuiApplicationBase {
                         650
                 );
 
-        navigator = new Navigator();
+        navigator =
+                new Navigator();
 
         HomePanel homePanel =
                 new HomePanel();
@@ -59,16 +51,18 @@ public final class JoviaApplication extends GuiApplicationBase {
                 new LanguageSelectionPanel(
                         navigator,
                         homePanel,
-                        () -> createMenuBar(homePanel)
+                        () -> createMenuBar(
+                                homePanel
+                        )
                 );
 
         navigator.addScreen(
-                SCREEN_LANGUAGE,
+                Screen.LANGUAGE,
                 languageSelectionPanel
         );
 
         navigator.addScreen(
-                SCREEN_HOME,
+                Screen.HOME,
                 homePanel
         );
 
@@ -77,10 +71,12 @@ public final class JoviaApplication extends GuiApplicationBase {
         );
 
         navigator.show(
-                SCREEN_LANGUAGE
+                Screen.LANGUAGE
         );
 
-        mainFrame.setVisible(true);
+        mainFrame.setVisible(
+                true
+        );
     }
 
     // ----------------------------------------
@@ -96,7 +92,7 @@ public final class JoviaApplication extends GuiApplicationBase {
                         .builder(mainFrame)
                         .onHome(
                                 () -> navigator.show(
-                                        SCREEN_HOME
+                                        Screen.HOME
                                 )
                         )
                         .onExit(

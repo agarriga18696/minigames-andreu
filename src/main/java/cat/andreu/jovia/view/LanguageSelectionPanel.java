@@ -3,6 +3,7 @@ package cat.andreu.jovia.view;
 import cat.andreu.jovia.i18n.Messages;
 import cat.andreu.jovia.navigation.Navigator;
 
+import cat.andreu.jovia.navigation.Screen;
 import io.github.agarriga18696.andreuutils.core.Language;
 import io.github.agarriga18696.andreuutils.core.LanguageManager;
 import io.github.agarriga18696.andreuutils.swing.ComponentsSwing;
@@ -351,7 +352,7 @@ public final class LanguageSelectionPanel extends JPanel {
 
         languageSelectedAction.run();
 
-        navigator.show("HOME");
+        navigator.show(Screen.HOME);
     }
 
     // ----------------------------------------
