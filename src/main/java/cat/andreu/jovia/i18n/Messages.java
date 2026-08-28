@@ -18,8 +18,7 @@ public final class Messages {
     // CONSTANTS
     // ----------------------------------------
 
-    private static final String BUNDLE_NAME =
-            "i18n.messages";
+    private static final String BUNDLE_NAME = "i18n.messages";
 
     private Messages() {
         // Utility class
@@ -30,19 +29,37 @@ public final class Messages {
     // ----------------------------------------
 
     /**
-     * Returns the translated text associated with the specified key.
+     * Returns a translated message using the current application language.
      *
      * @param key       Translation key.
-     * @param arguments Optional values inserted into the translated text.
-     * @return Translated text.
+     * @param arguments Optional message arguments.
+     * @return The translated message.
      */
     public static String text(
             String key,
             Object... arguments
     ) {
 
-        Language language =
-                LanguageManager.getLanguage();
+        return text(
+                LanguageManager.getLanguage(),
+                key,
+                arguments
+        );
+    }
+
+    /**
+     * Returns a translated message using the specified language.
+     *
+     * @param language  Language to use.
+     * @param key       Translation key.
+     * @param arguments Optional message arguments.
+     * @return The translated message.
+     */
+    public static String text(
+            Language language,
+            String key,
+            Object... arguments
+    ) {
 
         ResourceBundle bundle =
                 ResourceBundle.getBundle(
@@ -50,8 +67,7 @@ public final class Messages {
                         language.locale()
                 );
 
-        String pattern =
-                bundle.getString(key);
+        String pattern = bundle.getString(key);
 
         if (arguments.length == 0) {
             return pattern;
